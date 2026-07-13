@@ -13,10 +13,13 @@ __pycache__/
 .env
 .env.*
 
-# graphify machine-specific state (graph outputs stay tracked)
-graphify-out/.graphify_*
-# graphify dated backup snapshots (git history covers this)
-graphify-out/20*/
+# Claude / dev-environment files — local only, never tracked or pushed
+CLAUDE.md
+CLAUDE.local.md
+.claude/
+HANDOFF.md
+BUILD-PROMPT.md
+graphify-out/
 
 # agent worktrees + shared build venv
 .worktrees/
