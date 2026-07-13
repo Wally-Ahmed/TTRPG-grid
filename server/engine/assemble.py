@@ -397,7 +397,7 @@ def _apply_mood(canvas: Image.Image, mood: str) -> Image.Image:
     elif mood == "eerie":
         rgb = ImageEnhance.Color(rgb).enhance(0.65)       # desaturate
         rgb = _tint(rgb, (200, 214, 236), 0.12)           # cool
-        rgb = _vignette(rgb, 0.55)
+        rgb = _vignette(rgb, 0.45)
     elif mood == "combat":
         rgb = ImageEnhance.Contrast(rgb).enhance(1.22)
         rgb = ImageEnhance.Color(rgb).enhance(1.08)
@@ -422,7 +422,9 @@ def _vignette(img: Image.Image, strength: float) -> Image.Image:
     cx, cy = w / 2.0, h / 2.0
     d = np.sqrt(((xx - cx) / cx) ** 2 + ((yy - cy) / cy) ** 2)
     d = np.clip(d, 0, 1.4)
-    darken = np.clip(1.0 - strength * (d ** 2), 0.0, 1.0)
+    # Floor at 0.35 so the grade stays moody without ever crushing map edges
+    # to unreadable black (tactical readability > atmosphere, spec §3).
+    darken = np.clip(1.0 - strength * (d ** 2), 0.35, 1.0)
     arr = np.asarray(img).astype(np.float64)
     arr *= darken[:, :, None]
     return Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8), "RGB")
