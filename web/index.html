@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cartographer's Table — TTRPG Grid Map Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><text y='19' font-size='20'>🗺️</text></svg>" />
+</head>
+<body>
+<div class="app">
+  <!-- ============================ SIDEBAR ============================ -->
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 3 3 5v16l6-2 6 2 6-2V3l-6 2-6-2Z"/><path d="M9 3v16M15 5v16"/>
+        </svg>
+      </span>
+      <div>
+        <div class="brand__title">Cartographer's Table</div>
+        <div class="brand__sub">Grid Map Generator</div>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Primary">
+      <button class="nav__item is-active" data-nav="generate">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+        Generate
+      </button>
+      <button class="nav__item" data-nav="library">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        Library
+        <span class="nav__count" id="nav-lib-count">0</span>
+      </button>
+    </nav>
+
+    <div class="sidebar__spacer"></div>
+
+    <div class="settings-block" style="padding: 0 6px 10px;">
+      <label class="toggle" title="Alternate high-contrast, pattern-augmented palette for colorblind readability">
+        <input type="checkbox" id="cb-mode" />
+        <span class="toggle__track"></span>
+        <span>Colorblind mode</span>
+      </label>
+    </div>
+
+    <div class="sidebar__foot">
+      <div id="side-storage"><b>—</b> maps · <b>—</b></div>
+      <div style="margin-top:6px;">Fully offline · zero cost</div>
+    </div>
+  </aside>
+
+  <!-- ============================ MAIN ============================ -->
+  <main class="main">
+
+    <!-- ===================== GENERATE VIEW ===================== -->
+    <section class="view is-active" id="view-generate">
+      <div class="view__head">
+        <div>
+          <h1 class="view__title">Conjure a Battle Map</h1>
+          <div class="view__lede">Describe a place. The engine assembles a grid-aligned, VTT-ready map from local art — no internet, no cost.</div>
+        </div>
+      </div>
+
+      <div class="gen-grid">
+        <!-- LEFT: prompt + result -->
+        <div>
+          <div class="panel prompt-card">
+            <div class="panel__head"><h3>Prompt</h3></div>
+            <div class="panel__body">
+              <div class="field">
+                <textarea id="prompt" class="prompt-box" placeholder="e.g. A collapsed dwarven mine with an underground river and rubble-choked side passages…"></textarea>
+              </div>
+              <div class="examples">
+                <span class="examples__label">Try:</span>
+                <button class="chip" data-example="Frozen dwarven crypt">Frozen dwarven crypt</button>
+                <button class="chip" data-example="Pirate cove ambush">Pirate cove ambush</button>
+                <button class="chip" data-example="Overgrown elven ruins">Overgrown elven ruins</button>
+                <button class="chip" data-example="Collapsed mineshaft">Collapsed mineshaft</button>
+              </div>
+              <div class="warnings" id="pre-warnings"></div>
+              <div class="gen-actions">
+                <button class="btn btn--primary btn--lg" id="btn-generate">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 3 2.5 6L14 11l-6.5 2L5 19l-2.5-6L-4 11"/><path d="M19 3v4M17 5h4M18 15v3M16.5 16.5h3"/></svg>
+                  <span>Generate Map</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- RESULT (hidden until first generation) -->
+          <div id="result-region" style="display:none; margin-top:22px;">
+            <div class="view__head" style="margin:6px 0 12px;">
+              <h2 class="view__title" style="font-size:22px;" id="result-title">Result</h2>
+              <div class="spacer"></div>
+              <div class="floor-switch" id="floor-switch" style="display:none;"></div>
+              <button class="btn btn--sm" id="btn-reroll" title="Same parameters, new seed">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg>
+                Reroll
+              </button>
+            </div>
+
+            <div class="result-wrap">
+              <!-- preview -->
+              <div class="preview" id="preview">
+                <div class="gen-overlay" id="gen-overlay"><span class="spinner spinner--lg"></span><p id="gen-status">Assembling terrain…</p></div>
+                <div class="preview__toolbar">
+                  <div class="seg" id="grid-toggle">
+                    <button data-grid="gridless" class="is-on">Gridless</button>
+                    <button data-grid="gridded">Gridded</button>
+                  </div>
+                  <div class="spacer"></div>
+                  <button class="btn btn--sm" id="btn-edit-mode">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+                    Edit
+                  </button>
+                </div>
+                <div class="preview__stage" id="preview-stage">
+                  <img class="preview__img" id="preview-img" alt="Generated map preview" />
+                  <div class="preview__overlay" id="edit-overlay"></div>
+                </div>
+              </div>
+
+              <!-- rail -->
+              <div class="rail" id="result-rail"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: guided controls -->
+        <div class="panel" id="controls-panel">
+          <div class="panel__head"><h3>Guided Controls</h3><div class="spacer"></div><span class="hint">optional</span></div>
+          <div class="panel__body">
+            <div class="controls-grid">
+              <div class="field">
+                <label for="size-preset">Map size</label>
+                <select id="size-preset">
+                  <option value="small">Small · 20×20</option>
+                  <option value="standard" selected>Standard · 30×20</option>
+                  <option value="large">Large · 60×60</option>
+                  <option value="custom">Custom…</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="feet">Feet / square</label>
+                <input type="number" id="feet" value="5" min="1" max="100" step="1" />
+              </div>
+
+              <div class="custom-dims" id="custom-dims">
+                <div class="field"><label for="cols">Columns</label><input type="number" id="cols" value="30" min="5" max="200" /></div>
+                <span class="times">×</span>
+                <div class="field"><label for="rows">Rows</label><input type="number" id="rows" value="20" min="5" max="200" /></div>
+              </div>
+
+              <div class="field">
+                <label for="px">Pixels / square</label>
+                <input type="number" id="px" value="140" min="40" max="300" step="10" />
+              </div>
+              <div class="field">
+                <label for="mood">Mood</label>
+                <select id="mood">
+                  <option value="peaceful">Peaceful</option>
+                  <option value="neutral" selected>Neutral</option>
+                  <option value="tense">Tense</option>
+                  <option value="combat">Combat</option>
+                  <option value="eerie">Eerie</option>
+                </select>
+              </div>
+
+              <!-- live estimate -->
+              <div class="field col-span">
+                <span class="label">Estimated output</span>
+                <div class="estimate" id="estimate">
+                  <div class="estimate__cell"><div class="estimate__k">Resolution</div><div class="estimate__v" id="est-res">—</div></div>
+                  <div class="estimate__cell"><div class="estimate__k">Megapixels</div><div class="estimate__v" id="est-mp">—</div></div>
+                  <div class="estimate__cell"><div class="estimate__k">Est. size</div><div class="estimate__v" id="est-size">—</div></div>
+                </div>
+              </div>
+
+              <div class="field col-span">
+                <span class="label">Biomes <span class="muted" style="text-transform:none;font-weight:400;">(optional — prompt can drive these)</span></span>
+                <div class="examples" id="biome-picker"><span class="hint">Loading palette…</span></div>
+              </div>
+
+              <div class="field col-span">
+                <label for="density">Encounter density</label>
+                <div class="range-row"><input type="range" id="density" min="0" max="100" value="50" /></div>
+                <div class="range-ends"><span>Sparse</span><span id="density-val">Balanced</span><span>Dense</span></div>
+              </div>
+
+              <div class="field col-span">
+                <label for="seed">Seed</label>
+                <div class="seed-row">
+                  <input type="text" id="seed" inputmode="numeric" placeholder="(auto on generate)" />
+                  <button class="btn btn--icon" id="btn-randomize" title="Randomize seed" aria-label="Randomize seed">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.4" fill="currentColor"/><circle cx="16" cy="8" r="1.4" fill="currentColor"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/><circle cx="8" cy="16" r="1.4" fill="currentColor"/><circle cx="16" cy="16" r="1.4" fill="currentColor"/></svg>
+                  </button>
+                </div>
+                <span class="hint">Same seed + same settings reproduces the exact map.</span>
+              </div>
+
+              <hr class="divider col-span" />
+
+              <div class="field col-span">
+                <div class="settings-block">
+                  <label class="toggle">
+                    <input type="checkbox" id="multi-level" />
+                    <span class="toggle__track"></span>
+                    <span>Multi-level (linked floors)</span>
+                  </label>
+                  <div class="levels-row" id="levels-row">
+                    <span class="hint">Floors:</span>
+                    <input type="number" id="levels" value="2" min="2" max="6" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== LIBRARY VIEW ===================== -->
+    <section class="view" id="view-library">
+      <div class="view__head">
+        <div>
+          <h1 class="view__title">Map Library</h1>
+          <div class="view__lede">Every map you generate is saved locally. Browse, search, tag, favorite, export, or delete.</div>
+        </div>
+        <div class="spacer"></div>
+        <button class="btn" id="btn-lib-export" title="Download the whole library as one archive">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+          Backup
+        </button>
+        <button class="btn" id="btn-lib-import" title="Import a library archive">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 9 5-5 5 5"/><path d="M12 4v12"/></svg>
+          Import
+        </button>
+        <input type="file" id="import-file" accept=".zip,application/zip" hidden />
+      </div>
+
+      <div class="lib-storage" id="lib-storage">
+        <span><b id="stat-count">0</b> maps saved</span>
+        <span class="dot"></span>
+        <span><b id="stat-size">0 MB</b> on disk</span>
+        <span class="spacer"></span>
+        <span class="muted" id="stat-biomes"></span>
+      </div>
+
+      <div class="lib-toolbar">
+        <div class="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="search" id="lib-search" placeholder="Search titles & prompts…" />
+        </div>
+        <select id="lib-biome"><option value="">All biomes</option></select>
+        <select id="lib-sort">
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+        </select>
+        <button class="chip" id="lib-fav-filter" title="Show only favorites">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="15" height="15"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8-6.1-3.2-6.1 3.2L7.1 14.2l-5-4.9 6.9-1Z"/></svg>
+          Favorites
+        </button>
+        <button class="chip" id="lib-select-toggle">Select</button>
+      </div>
+
+      <div class="bulk-bar" id="bulk-bar">
+        <span class="bulk-bar__count" id="bulk-count">0 selected</span>
+        <span class="spacer"></span>
+        <button class="btn btn--sm" id="bulk-zip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+          Download ZIP
+        </button>
+        <button class="btn btn--sm" id="bulk-foundry">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg>
+          Foundry module
+        </button>
+        <button class="btn btn--sm btn--ghost" id="bulk-cancel">Done</button>
+      </div>
+
+      <div class="lib-grid" id="lib-grid"></div>
+      <div class="empty-state" id="lib-empty" style="display:none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3 3 5v16l6-2 6 2 6-2V3l-6 2-6-2Z"/><path d="M9 3v16M15 5v16"/></svg>
+        <h3>No maps yet</h3>
+        <p>Head to <b>Generate</b> and conjure your first battle map — it'll show up here automatically.</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ============================ MODALS ============================ -->
+<div class="overlay" id="detail-overlay">
+  <div class="modal" id="detail-modal"><!-- filled by JS --></div>
+</div>
+
+<div class="overlay" id="confirm-overlay">
+  <div class="modal modal--sm">
+    <div class="modal__head"><h2 id="confirm-title">Confirm</h2></div>
+    <div class="modal__body"><p class="confirm-text" id="confirm-text"></p></div>
+    <div class="modal__foot">
+      <div class="spacer"></div>
+      <button class="btn btn--ghost" id="confirm-cancel">Cancel</button>
+      <button class="btn btn--danger" id="confirm-ok">Delete</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast-wrap" id="toasts"></div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
