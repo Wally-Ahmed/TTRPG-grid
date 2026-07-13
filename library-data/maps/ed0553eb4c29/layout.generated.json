@@ -1,0 +1,1067 @@
+{
+  "cols": 30,
+  "rows": 20,
+  "seed": 1973082273,
+  "spec": {
+    "prompt": "an ambush on a forest road with dense cover and a broken cart",
+    "cols": 30,
+    "rows": 20,
+    "px_per_square": 70,
+    "feet_per_square": 5,
+    "seed": 1973082273,
+    "density": 0.5,
+    "mood": "tense",
+    "biomes": [
+      "forest"
+    ],
+    "structure": null,
+    "features": [
+      "road",
+      "scenario:ambush"
+    ],
+    "multi_level": false,
+    "levels": 1,
+    "palette_mode": "standard",
+    "title": "an ambush on a forest road"
+  },
+  "cells": [
+    [
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "dirt",
+      "dirt",
+      "dirt",
+      "dirt",
+      "dirt",
+      "dirt",
+      "dirt",
+      "mountain_rock",
+      "mountain_rock",
+      "mountain_rock",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor"
+    ],
+    [
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "dirt",
+      "forest_floor",
+      "dirt",
+      "dirt",
+      "dirt",
+      "dirt",
+      "tall_grass",
+      "dirt",
+      "tall_grass",
+      "mountain_rock",
+      "dirt",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor"
+    ],
+    [
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "tall_grass",
+      "dirt",
+      "tall_grass",
+      "tall_grass",
+      "tall_grass",
+      "dirt",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor"
+    ],
+    [
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "dirt",
+      "dirt",
+      "dirt",
+      "tall_grass",
+      "tall_grass",
+      "dirt",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor"
+    ],
+    [
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "mountain_rock",
+      "dirt",
+      "dirt",
+      "dirt",
+      "dirt",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "dirt",
+      "tall_grass",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "tall_grass",
+      "dirt"
+    ],
+    [
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "mountain_rock",
+      "mountain_rock",
+      "mountain_rock",
+      "forest_floor",
+      "dirt",
+      "dirt",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "tall_grass",
+      "tall_grass",
+      "tall_grass",
+      "tall_grass"
+    ],
+    [
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "mountain_rock",
+      "mountain_rock",
+      "mountain_rock",
+      "mountain_rock",
+      "mountain_rock",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "dirt",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "tall_grass",
+      "grass",
+      "tall_grass"
+    ],
+    [
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "mountain_rock",
+      "dirt",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "dirt",
+      "dirt",
+      "dirt",
+      "dirt",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "dirt",
+      "grass",
+      "grass",
+      "tall_grass"
+    ],
+    [
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "road",
+      "road",
+      "road",
+      "road",
+      "road",
+      "road",
+      "road",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "forest_floor",
+      "dirt",
+      "dirt",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "road",
+      "road",
+      "road",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "road",
+      "road",
+      "road",
+      "forest_floor",
+      "forest_floor",
+      "road",
+      "road",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "tall_grass",
+      "grass",
+      "grass"
+    ],
+    [
+      "road",
+      "road",
+      "road",
+      "road",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "tall_grass",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "road",
+      "road",
+      "forest_floor",
+      "forest_floor",
+      "road",
+      "tall_grass",
+      "road",
+      "road",
+      "road",
+      "dirt",
+      "road",
+      "road",
+      "road"
+    ],
+    [
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "dirt",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "road",
+      "dirt",
+      "tall_grass",
+      "dirt"
+    ],
+    [
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "dirt",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "dirt",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "dirt"
+    ],
+    [
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "dirt",
+      "forest_floor",
+      "dirt",
+      "tall_grass",
+      "tall_grass",
+      "dirt",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "dirt"
+    ],
+    [
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "dirt",
+      "tall_grass",
+      "tall_grass",
+      "dirt",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt"
+    ],
+    [
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "dirt",
+      "forest_floor",
+      "tall_grass",
+      "tall_grass",
+      "dirt",
+      "dirt",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor"
+    ],
+    [
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "dirt",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "dirt",
+      "dirt",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor"
+    ],
+    [
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "dirt",
+      "dirt",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor"
+    ],
+    [
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "tall_grass",
+      "tall_grass",
+      "tall_grass",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor"
+    ],
+    [
+      "dirt",
+      "dirt",
+      "dirt",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "dirt",
+      "dirt",
+      "dirt",
+      "tall_grass",
+      "tall_grass",
+      "dirt",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor",
+      "forest_floor"
+    ]
+  ],
+  "props": [
+    {
+      "id": "p001",
+      "type": "campfire",
+      "x": 15,
+      "y": 10,
+      "rot": 0,
+      "variant": 0
+    },
+    {
+      "id": "p002",
+      "type": "fallen_log",
+      "x": 5,
+      "y": 8,
+      "rot": 0,
+      "variant": 0
+    },
+    {
+      "id": "p003",
+      "type": "fallen_log",
+      "x": 17,
+      "y": 11,
+      "rot": 0,
+      "variant": 0
+    },
+    {
+      "id": "p004",
+      "type": "fallen_log",
+      "x": 8,
+      "y": 8,
+      "rot": 0,
+      "variant": 0
+    },
+    {
+      "id": "p005",
+      "type": "rock",
+      "x": 17,
+      "y": 12,
+      "rot": 0,
+      "variant": 0
+    },
+    {
+      "id": "p006",
+      "type": "fallen_log",
+      "x": 24,
+      "y": 9,
+      "rot": 0,
+      "variant": 1
+    },
+    {
+      "id": "p007",
+      "type": "rock",
+      "x": 24,
+      "y": 12,
+      "rot": 0,
+      "variant": 1
+    },
+    {
+      "id": "p008",
+      "type": "rock",
+      "x": 15,
+      "y": 8,
+      "rot": 0,
+      "variant": 0
+    },
+    {
+      "id": "p009",
+      "type": "rock",
+      "x": 0,
+      "y": 10,
+      "rot": 0,
+      "variant": 2
+    },
+    {
+      "id": "p010",
+      "type": "mushroom",
+      "x": 11,
+      "y": 10,
+      "rot": 0,
+      "variant": 1
+    },
+    {
+      "id": "p011",
+      "type": "mushroom",
+      "x": 1,
+      "y": 4,
+      "rot": 0,
+      "variant": 1
+    },
+    {
+      "id": "p012",
+      "type": "tree_pine",
+      "x": 27,
+      "y": 2,
+      "rot": 0,
+      "variant": 1
+    },
+    {
+      "id": "p013",
+      "type": "mushroom",
+      "x": 0,
+      "y": 2,
+      "rot": 0,
+      "variant": 1
+    }
+  ],
+  "focal": {
+    "x": 15,
+    "y": 10,
+    "prop_id": "p001",
+    "kind": "campfire"
+  },
+  "spawns": [
+    {
+      "x": 29,
+      "y": 19,
+      "role": "player"
+    },
+    {
+      "x": 28,
+      "y": 18,
+      "role": "player"
+    },
+    {
+      "x": 29,
+      "y": 18,
+      "role": "player"
+    },
+    {
+      "x": 16,
+      "y": 10,
+      "role": "enemy"
+    },
+    {
+      "x": 15,
+      "y": 9,
+      "role": "enemy"
+    },
+    {
+      "x": 16,
+      "y": 9,
+      "role": "enemy"
+    },
+    {
+      "x": 17,
+      "y": 9,
+      "role": "enemy"
+    },
+    {
+      "x": 17,
+      "y": 10,
+      "role": "enemy"
+    }
+  ],
+  "connections": [],
+  "indoor": false,
+  "walls": [
+    [
+      [
+        14,
+        0
+      ],
+      [
+        17,
+        0
+      ]
+    ],
+    [
+      [
+        14,
+        1
+      ],
+      [
+        15,
+        1
+      ]
+    ],
+    [
+      [
+        16,
+        1
+      ],
+      [
+        17,
+        1
+      ]
+    ],
+    [
+      [
+        15,
+        2
+      ],
+      [
+        16,
+        2
+      ]
+    ],
+    [
+      [
+        12,
+        4
+      ],
+      [
+        13,
+        4
+      ]
+    ],
+    [
+      [
+        11,
+        5
+      ],
+      [
+        12,
+        5
+      ]
+    ],
+    [
+      [
+        13,
+        5
+      ],
+      [
+        14,
+        5
+      ]
+    ],
+    [
+      [
+        10,
+        6
+      ],
+      [
+        11,
+        6
+      ]
+    ],
+    [
+      [
+        14,
+        6
+      ],
+      [
+        15,
+        6
+      ]
+    ],
+    [
+      [
+        10,
+        7
+      ],
+      [
+        11,
+        7
+      ]
+    ],
+    [
+      [
+        12,
+        7
+      ],
+      [
+        15,
+        7
+      ]
+    ],
+    [
+      [
+        11,
+        8
+      ],
+      [
+        12,
+        8
+      ]
+    ],
+    [
+      [
+        10,
+        6
+      ],
+      [
+        10,
+        7
+      ]
+    ],
+    [
+      [
+        11,
+        5
+      ],
+      [
+        11,
+        6
+      ]
+    ],
+    [
+      [
+        11,
+        7
+      ],
+      [
+        11,
+        8
+      ]
+    ],
+    [
+      [
+        12,
+        4
+      ],
+      [
+        12,
+        5
+      ]
+    ],
+    [
+      [
+        12,
+        7
+      ],
+      [
+        12,
+        8
+      ]
+    ],
+    [
+      [
+        13,
+        4
+      ],
+      [
+        13,
+        5
+      ]
+    ],
+    [
+      [
+        14,
+        0
+      ],
+      [
+        14,
+        1
+      ]
+    ],
+    [
+      [
+        14,
+        5
+      ],
+      [
+        14,
+        6
+      ]
+    ],
+    [
+      [
+        15,
+        1
+      ],
+      [
+        15,
+        2
+      ]
+    ],
+    [
+      [
+        15,
+        6
+      ],
+      [
+        15,
+        7
+      ]
+    ],
+    [
+      [
+        16,
+        1
+      ],
+      [
+        16,
+        2
+      ]
+    ],
+    [
+      [
+        17,
+        0
+      ],
+      [
+        17,
+        1
+      ]
+    ]
+  ]
+}

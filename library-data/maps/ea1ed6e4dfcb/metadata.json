@@ -1,0 +1,82 @@
+{
+  "title": "a ruined temple interior with a",
+  "prompt": "a ruined temple interior with a desecrated altar and rubble",
+  "generated_at": "2026-07-13T06:10:11Z",
+  "grid": {
+    "columns": 30,
+    "rows": 20,
+    "px_per_square": 70,
+    "feet_per_square": 5
+  },
+  "image": {
+    "width": 2100,
+    "height": 1400
+  },
+  "foundry": {
+    "grid_size": 70,
+    "scene_width": 2100,
+    "scene_height": 1400,
+    "grid_type": "Square",
+    "global_illumination": false
+  },
+  "owlbear": {
+    "grid_size_px": 70,
+    "grid_type": "Square",
+    "cell_size_ft": 5,
+    "grid_columns": 30,
+    "grid_rows": 20
+  },
+  "seed": 1758670242,
+  "density": 0.5,
+  "mood": "eerie",
+  "biomes": [
+    "temple",
+    "building"
+  ],
+  "spawn_points": [
+    {
+      "x": 1,
+      "y": 1,
+      "role": "player"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "role": "player"
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "role": "player"
+    },
+    {
+      "x": 18,
+      "y": 10,
+      "role": "enemy"
+    },
+    {
+      "x": 18,
+      "y": 9,
+      "role": "enemy"
+    },
+    {
+      "x": 18,
+      "y": 11,
+      "role": "enemy"
+    },
+    {
+      "x": 18,
+      "y": 8,
+      "role": "enemy"
+    },
+    {
+      "x": 16,
+      "y": 12,
+      "role": "enemy"
+    }
+  ],
+  "connections": [],
+  "set_id": null,
+  "floor_index": 0,
+  "warnings": []
+}
