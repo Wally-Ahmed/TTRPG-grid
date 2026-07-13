@@ -28,7 +28,8 @@ from .library import Library, LibraryError, MapNotFound
 _HERE = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.dirname(_HERE)
 WEB_DIR = os.path.join(REPO_ROOT, "web")
-ASSETS_MANIFEST = os.path.join(REPO_ROOT, "assets", "manifest.json")
+ASSETS_DIR = os.path.join(REPO_ROOT, "assets")
+ASSETS_MANIFEST = os.path.join(ASSETS_DIR, "manifest.json")
 
 # 32-bit-ish positive seed space; server-side randomization uses secrets, not time.
 _SEED_MAX = 2**31 - 1
@@ -343,6 +344,16 @@ def create_app(library: Optional[Library] = None, library_root: str = "library-d
     def static_files(filename: str):  # noqa: WPS430
         return _serve_web(filename)
 
+    # Tile/prop art for the editor palette (paths come from /api/assets/palette).
+    @app.get("/assets/<path:filename>")
+    def asset_files(filename: str):  # noqa: WPS430
+        safe = os.path.normpath(os.path.join(ASSETS_DIR, filename))
+        if not safe.startswith(os.path.abspath(ASSETS_DIR) + os.sep):
+            return jsonify({"error": "not found"}), 404
+        if os.path.isfile(safe):
+            return send_file(safe)
+        return jsonify({"error": "not found"}), 404
+
     # Catch-all for other top-level web assets (app.js, style.css, favicon, ...).
     @app.get("/<path:filename>")
     def web_asset(filename: str):  # noqa: WPS430
@@ -465,6 +476,7 @@ def _build_palette() -> dict:
 
     terrains = []
     for tid, t in (manifest.get("terrains") or {}).items():
+        tiles = t.get("tiles") or []
         terrains.append({
             "id": tid,
             "display": t.get("display", tid),
@@ -473,22 +485,30 @@ def _build_palette() -> dict:
             "hazard": bool(t.get("hazard", False)),
             "difficult": bool(t.get("difficult", False)),
             "indoor": bool(t.get("indoor", False)),
+            "tiles": ["/assets/" + p for p in tiles],
+            "preview": ("/assets/" + tiles[0]) if tiles else None,
         })
 
+    biomes: set = set()
     props = []
     for pid, p in (manifest.get("props") or {}).items():
         variants = p.get("variants") or []
+        biomes.update(p.get("biomes") or [])
         props.append({
             "id": pid,
+            "type": pid,
             "display": p.get("display", pid),
             "category": p.get("category", "misc"),
             "footprint": p.get("footprint", [1, 1]),
             "variant_count": len(variants),
+            "variants": ["/assets/" + v for v in variants],
+            "preview": ("/assets/" + variants[0]) if variants else None,
             "rotatable": bool(p.get("rotatable", False)),
         })
 
     return {
         "px_per_square": manifest.get("px_per_square", 140),
+        "biomes": sorted(biomes),
         "terrains": terrains,
         "props": props,
     }
