@@ -1,0 +1,1299 @@
+{
+  "px_per_square": 140,
+  "generator_seed": 7,
+  "terrains": {
+    "grass": {
+      "display": "Grass",
+      "walkable": true,
+      "blocking": false,
+      "hazard": false,
+      "difficult": false,
+      "indoor": false,
+      "priority": 30,
+      "tiles": [
+        "tiles/grass/grass_01.png",
+        "tiles/grass/grass_02.png",
+        "tiles/grass/grass_03.png",
+        "tiles/grass/grass_04.png",
+        "tiles/grass/grass_05.png"
+      ]
+    },
+    "tall_grass": {
+      "display": "Tall Grass",
+      "walkable": true,
+      "blocking": false,
+      "hazard": false,
+      "difficult": true,
+      "indoor": false,
+      "priority": 32,
+      "tiles": [
+        "tiles/tall_grass/tall_grass_01.png",
+        "tiles/tall_grass/tall_grass_02.png",
+        "tiles/tall_grass/tall_grass_03.png",
+        "tiles/tall_grass/tall_grass_04.png"
+      ]
+    },
+    "forest_floor": {
+      "display": "Forest Floor",
+      "walkable": true,
+      "blocking": false,
+      "hazard": false,
+      "difficult": false,
+      "indoor": false,
+      "priority": 34,
+      "tiles": [
+        "tiles/forest_floor/forest_floor_01.png",
+        "tiles/forest_floor/forest_floor_02.png",
+        "tiles/forest_floor/forest_floor_03.png",
+        "tiles/forest_floor/forest_floor_04.png",
+        "tiles/forest_floor/forest_floor_05.png"
+      ]
+    },
+    "jungle_floor": {
+      "display": "Jungle Floor",
+      "walkable": true,
+      "blocking": false,
+      "hazard": false,
+      "difficult": true,
+      "indoor": false,
+      "priority": 35,
+      "tiles": [
+        "tiles/jungle_floor/jungle_floor_01.png",
+        "tiles/jungle_floor/jungle_floor_02.png",
+        "tiles/jungle_floor/jungle_floor_03.png",
+        "tiles/jungle_floor/jungle_floor_04.png"
+      ]
+    },
+    "dirt": {
+      "display": "Dirt",
+      "walkable": true,
+      "blocking": false,
+      "hazard": false,
+      "difficult": false,
+      "indoor": false,
+      "priority": 25,
+      "tiles": [
+        "tiles/dirt/dirt_01.png",
+        "tiles/dirt/dirt_02.png",
+        "tiles/dirt/dirt_03.png",
+        "tiles/dirt/dirt_04.png",
+        "tiles/dirt/dirt_05.png"
+      ]
+    },
+    "road": {
+      "display": "Road",
+      "walkable": true,
+      "blocking": false,
+      "hazard": false,
+      "difficult": false,
+      "indoor": false,
+      "priority": 45,
+      "tiles": [
+        "tiles/road/road_01.png",
+        "tiles/road/road_02.png",
+        "tiles/road/road_03.png",
+        "tiles/road/road_04.png"
+      ]
+    },
+    "cobblestone": {
+      "display": "Cobblestone",
+      "walkable": true,
+      "blocking": false,
+      "hazard": false,
+      "difficult": false,
+      "indoor": false,
+      "priority": 46,
+      "tiles": [
+        "tiles/cobblestone/cobblestone_01.png",
+        "tiles/cobblestone/cobblestone_02.png",
+        "tiles/cobblestone/cobblestone_03.png",
+        "tiles/cobblestone/cobblestone_04.png"
+      ]
+    },
+    "sand": {
+      "display": "Sand",
+      "walkable": true,
+      "blocking": false,
+      "hazard": false,
+      "difficult": false,
+      "indoor": false,
+      "priority": 28,
+      "tiles": [
+        "tiles/sand/sand_01.png",
+        "tiles/sand/sand_02.png",
+        "tiles/sand/sand_03.png",
+        "tiles/sand/sand_04.png",
+        "tiles/sand/sand_05.png"
+      ]
+    },
+    "snow": {
+      "display": "Snow",
+      "walkable": true,
+      "blocking": false,
+      "hazard": false,
+      "difficult": true,
+      "indoor": false,
+      "priority": 29,
+      "tiles": [
+        "tiles/snow/snow_01.png",
+        "tiles/snow/snow_02.png",
+        "tiles/snow/snow_03.png",
+        "tiles/snow/snow_04.png"
+      ]
+    },
+    "ice": {
+      "display": "Ice",
+      "walkable": true,
+      "blocking": false,
+      "hazard": false,
+      "difficult": true,
+      "indoor": false,
+      "priority": 40,
+      "tiles": [
+        "tiles/ice/ice_01.png",
+        "tiles/ice/ice_02.png",
+        "tiles/ice/ice_03.png",
+        "tiles/ice/ice_04.png"
+      ]
+    },
+    "swamp": {
+      "display": "Swamp",
+      "walkable": true,
+      "blocking": false,
+      "hazard": false,
+      "difficult": true,
+      "indoor": false,
+      "priority": 33,
+      "tiles": [
+        "tiles/swamp/swamp_01.png",
+        "tiles/swamp/swamp_02.png",
+        "tiles/swamp/swamp_03.png",
+        "tiles/swamp/swamp_04.png"
+      ]
+    },
+    "mud": {
+      "display": "Mud",
+      "walkable": true,
+      "blocking": false,
+      "hazard": false,
+      "difficult": true,
+      "indoor": false,
+      "priority": 27,
+      "tiles": [
+        "tiles/mud/mud_01.png",
+        "tiles/mud/mud_02.png",
+        "tiles/mud/mud_03.png",
+        "tiles/mud/mud_04.png"
+      ]
+    },
+    "water_shallow": {
+      "display": "Shallow Water",
+      "walkable": true,
+      "blocking": false,
+      "hazard": false,
+      "difficult": true,
+      "indoor": false,
+      "priority": 50,
+      "tiles": [
+        "tiles/water_shallow/water_shallow_01.png",
+        "tiles/water_shallow/water_shallow_02.png",
+        "tiles/water_shallow/water_shallow_03.png",
+        "tiles/water_shallow/water_shallow_04.png"
+      ]
+    },
+    "water_deep": {
+      "display": "Deep Water",
+      "walkable": false,
+      "blocking": false,
+      "hazard": true,
+      "difficult": false,
+      "indoor": false,
+      "priority": 52,
+      "tiles": [
+        "tiles/water_deep/water_deep_01.png",
+        "tiles/water_deep/water_deep_02.png",
+        "tiles/water_deep/water_deep_03.png",
+        "tiles/water_deep/water_deep_04.png"
+      ]
+    },
+    "river": {
+      "display": "River",
+      "walkable": false,
+      "blocking": false,
+      "hazard": true,
+      "difficult": false,
+      "indoor": false,
+      "priority": 51,
+      "tiles": [
+        "tiles/river/river_01.png",
+        "tiles/river/river_02.png",
+        "tiles/river/river_03.png",
+        "tiles/river/river_04.png"
+      ]
+    },
+    "lava": {
+      "display": "Lava",
+      "walkable": false,
+      "blocking": false,
+      "hazard": true,
+      "difficult": false,
+      "indoor": false,
+      "priority": 60,
+      "tiles": [
+        "tiles/lava/lava_01.png",
+        "tiles/lava/lava_02.png",
+        "tiles/lava/lava_03.png",
+        "tiles/lava/lava_04.png"
+      ]
+    },
+    "volcanic_rock": {
+      "display": "Volcanic Rock",
+      "walkable": true,
+      "blocking": false,
+      "hazard": false,
+      "difficult": false,
+      "indoor": false,
+      "priority": 36,
+      "tiles": [
+        "tiles/volcanic_rock/volcanic_rock_01.png",
+        "tiles/volcanic_rock/volcanic_rock_02.png",
+        "tiles/volcanic_rock/volcanic_rock_03.png",
+        "tiles/volcanic_rock/volcanic_rock_04.png"
+      ]
+    },
+    "stone_floor": {
+      "display": "Stone Floor",
+      "walkable": true,
+      "blocking": false,
+      "hazard": false,
+      "difficult": false,
+      "indoor": true,
+      "priority": 44,
+      "tiles": [
+        "tiles/stone_floor/stone_floor_01.png",
+        "tiles/stone_floor/stone_floor_02.png",
+        "tiles/stone_floor/stone_floor_03.png",
+        "tiles/stone_floor/stone_floor_04.png",
+        "tiles/stone_floor/stone_floor_05.png"
+      ]
+    },
+    "wood_floor": {
+      "display": "Wood Floor",
+      "walkable": true,
+      "blocking": false,
+      "hazard": false,
+      "difficult": false,
+      "indoor": true,
+      "priority": 43,
+      "tiles": [
+        "tiles/wood_floor/wood_floor_01.png",
+        "tiles/wood_floor/wood_floor_02.png",
+        "tiles/wood_floor/wood_floor_03.png",
+        "tiles/wood_floor/wood_floor_04.png",
+        "tiles/wood_floor/wood_floor_05.png"
+      ]
+    },
+    "cave_floor": {
+      "display": "Cave Floor",
+      "walkable": true,
+      "blocking": false,
+      "hazard": false,
+      "difficult": false,
+      "indoor": true,
+      "priority": 37,
+      "tiles": [
+        "tiles/cave_floor/cave_floor_01.png",
+        "tiles/cave_floor/cave_floor_02.png",
+        "tiles/cave_floor/cave_floor_03.png",
+        "tiles/cave_floor/cave_floor_04.png",
+        "tiles/cave_floor/cave_floor_05.png"
+      ]
+    },
+    "mountain_rock": {
+      "display": "Mountain Rock",
+      "walkable": true,
+      "blocking": false,
+      "hazard": false,
+      "difficult": true,
+      "indoor": false,
+      "priority": 38,
+      "tiles": [
+        "tiles/mountain_rock/mountain_rock_01.png",
+        "tiles/mountain_rock/mountain_rock_02.png",
+        "tiles/mountain_rock/mountain_rock_03.png",
+        "tiles/mountain_rock/mountain_rock_04.png"
+      ]
+    },
+    "stone_wall": {
+      "display": "Stone Wall",
+      "walkable": false,
+      "blocking": true,
+      "hazard": false,
+      "difficult": false,
+      "indoor": true,
+      "priority": 90,
+      "tiles": [
+        "tiles/stone_wall/stone_wall_01.png",
+        "tiles/stone_wall/stone_wall_02.png",
+        "tiles/stone_wall/stone_wall_03.png",
+        "tiles/stone_wall/stone_wall_04.png"
+      ]
+    },
+    "brick_wall": {
+      "display": "Brick Wall",
+      "walkable": false,
+      "blocking": true,
+      "hazard": false,
+      "difficult": false,
+      "indoor": true,
+      "priority": 91,
+      "tiles": [
+        "tiles/brick_wall/brick_wall_01.png",
+        "tiles/brick_wall/brick_wall_02.png",
+        "tiles/brick_wall/brick_wall_03.png",
+        "tiles/brick_wall/brick_wall_04.png"
+      ]
+    },
+    "wood_wall": {
+      "display": "Wood Wall",
+      "walkable": false,
+      "blocking": true,
+      "hazard": false,
+      "difficult": false,
+      "indoor": true,
+      "priority": 89,
+      "tiles": [
+        "tiles/wood_wall/wood_wall_01.png",
+        "tiles/wood_wall/wood_wall_02.png",
+        "tiles/wood_wall/wood_wall_03.png",
+        "tiles/wood_wall/wood_wall_04.png"
+      ]
+    },
+    "cave_wall": {
+      "display": "Cave Wall",
+      "walkable": false,
+      "blocking": true,
+      "hazard": false,
+      "difficult": false,
+      "indoor": true,
+      "priority": 88,
+      "tiles": [
+        "tiles/cave_wall/cave_wall_01.png",
+        "tiles/cave_wall/cave_wall_02.png",
+        "tiles/cave_wall/cave_wall_03.png",
+        "tiles/cave_wall/cave_wall_04.png"
+      ]
+    },
+    "rubble": {
+      "display": "Rubble",
+      "walkable": true,
+      "blocking": false,
+      "hazard": false,
+      "difficult": true,
+      "indoor": false,
+      "priority": 42,
+      "tiles": [
+        "tiles/rubble/rubble_01.png",
+        "tiles/rubble/rubble_02.png",
+        "tiles/rubble/rubble_03.png",
+        "tiles/rubble/rubble_04.png"
+      ]
+    },
+    "ship_deck": {
+      "display": "Ship Deck",
+      "walkable": true,
+      "blocking": false,
+      "hazard": false,
+      "difficult": false,
+      "indoor": true,
+      "priority": 44,
+      "tiles": [
+        "tiles/ship_deck/ship_deck_01.png",
+        "tiles/ship_deck/ship_deck_02.png",
+        "tiles/ship_deck/ship_deck_03.png",
+        "tiles/ship_deck/ship_deck_04.png"
+      ]
+    },
+    "marble_floor": {
+      "display": "Marble Floor",
+      "walkable": true,
+      "blocking": false,
+      "hazard": false,
+      "difficult": false,
+      "indoor": true,
+      "priority": 45,
+      "tiles": [
+        "tiles/marble_floor/marble_floor_01.png",
+        "tiles/marble_floor/marble_floor_02.png",
+        "tiles/marble_floor/marble_floor_03.png",
+        "tiles/marble_floor/marble_floor_04.png"
+      ]
+    },
+    "pit": {
+      "display": "Pit",
+      "walkable": false,
+      "blocking": false,
+      "hazard": true,
+      "difficult": false,
+      "indoor": true,
+      "priority": 58,
+      "tiles": [
+        "tiles/pit/pit_01.png",
+        "tiles/pit/pit_02.png",
+        "tiles/pit/pit_03.png"
+      ]
+    }
+  },
+  "props": {
+    "rock": {
+      "display": "Rock",
+      "category": "cover",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": true,
+      "biomes": [
+        "forest",
+        "cave",
+        "mountain",
+        "desert",
+        "coast",
+        "grassland"
+      ],
+      "variants": [
+        "props/rock/rock_01.png",
+        "props/rock/rock_02.png",
+        "props/rock/rock_03.png"
+      ],
+      "rotatable": true
+    },
+    "crate": {
+      "display": "Crate",
+      "category": "cover",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": true,
+      "biomes": [
+        "dungeon",
+        "village",
+        "ship",
+        "mine",
+        "market"
+      ],
+      "variants": [
+        "props/crate/crate_01.png",
+        "props/crate/crate_02.png",
+        "props/crate/crate_03.png"
+      ],
+      "rotatable": true
+    },
+    "barrel": {
+      "display": "Barrel",
+      "category": "cover",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": true,
+      "biomes": [
+        "dungeon",
+        "village",
+        "ship",
+        "tavern",
+        "market"
+      ],
+      "variants": [
+        "props/barrel/barrel_01.png",
+        "props/barrel/barrel_02.png",
+        "props/barrel/barrel_03.png"
+      ],
+      "rotatable": false
+    },
+    "low_wall": {
+      "display": "Low Wall",
+      "category": "cover",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": true,
+      "biomes": [
+        "dungeon",
+        "village",
+        "fortress",
+        "ruin"
+      ],
+      "variants": [
+        "props/low_wall/low_wall_01.png",
+        "props/low_wall/low_wall_02.png"
+      ],
+      "rotatable": true
+    },
+    "fallen_log": {
+      "display": "Fallen Log",
+      "category": "cover",
+      "footprint": [
+        2,
+        1
+      ],
+      "blocking": true,
+      "biomes": [
+        "forest",
+        "jungle",
+        "swamp",
+        "grassland"
+      ],
+      "variants": [
+        "props/fallen_log/fallen_log_01.png",
+        "props/fallen_log/fallen_log_02.png"
+      ],
+      "rotatable": true
+    },
+    "table": {
+      "display": "Table",
+      "category": "furniture",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": true,
+      "biomes": [
+        "tavern",
+        "dungeon",
+        "village",
+        "temple"
+      ],
+      "variants": [
+        "props/table/table_01.png",
+        "props/table/table_02.png"
+      ],
+      "rotatable": true
+    },
+    "chair": {
+      "display": "Chair",
+      "category": "furniture",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": false,
+      "biomes": [
+        "tavern",
+        "dungeon",
+        "village",
+        "temple"
+      ],
+      "variants": [
+        "props/chair/chair_01.png",
+        "props/chair/chair_02.png"
+      ],
+      "rotatable": true
+    },
+    "bed": {
+      "display": "Bed",
+      "category": "furniture",
+      "footprint": [
+        1,
+        2
+      ],
+      "blocking": true,
+      "biomes": [
+        "village",
+        "dungeon",
+        "tavern"
+      ],
+      "variants": [
+        "props/bed/bed_01.png",
+        "props/bed/bed_02.png"
+      ],
+      "rotatable": true
+    },
+    "bookshelf": {
+      "display": "Bookshelf",
+      "category": "furniture",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": true,
+      "biomes": [
+        "dungeon",
+        "temple",
+        "village"
+      ],
+      "variants": [
+        "props/bookshelf/bookshelf_01.png",
+        "props/bookshelf/bookshelf_02.png"
+      ],
+      "rotatable": true
+    },
+    "market_stall": {
+      "display": "Market Stall",
+      "category": "furniture",
+      "footprint": [
+        2,
+        2
+      ],
+      "blocking": true,
+      "biomes": [
+        "village",
+        "market"
+      ],
+      "variants": [
+        "props/market_stall/market_stall_01.png",
+        "props/market_stall/market_stall_02.png"
+      ],
+      "rotatable": true
+    },
+    "anvil": {
+      "display": "Anvil",
+      "category": "furniture",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": true,
+      "biomes": [
+        "village",
+        "mine",
+        "dungeon"
+      ],
+      "variants": [
+        "props/anvil/anvil_01.png",
+        "props/anvil/anvil_02.png"
+      ],
+      "rotatable": true
+    },
+    "bar_counter": {
+      "display": "Bar Counter",
+      "category": "furniture",
+      "footprint": [
+        2,
+        1
+      ],
+      "blocking": true,
+      "biomes": [
+        "tavern",
+        "village"
+      ],
+      "variants": [
+        "props/bar_counter/bar_counter_01.png",
+        "props/bar_counter/bar_counter_02.png"
+      ],
+      "rotatable": true
+    },
+    "tree_oak": {
+      "display": "Oak Tree",
+      "category": "nature",
+      "footprint": [
+        2,
+        2
+      ],
+      "blocking": true,
+      "biomes": [
+        "forest",
+        "grassland",
+        "village"
+      ],
+      "variants": [
+        "props/tree_oak/tree_oak_01.png",
+        "props/tree_oak/tree_oak_02.png"
+      ],
+      "rotatable": false
+    },
+    "tree_pine": {
+      "display": "Pine Tree",
+      "category": "nature",
+      "footprint": [
+        2,
+        2
+      ],
+      "blocking": true,
+      "biomes": [
+        "forest",
+        "mountain",
+        "arctic"
+      ],
+      "variants": [
+        "props/tree_pine/tree_pine_01.png",
+        "props/tree_pine/tree_pine_02.png"
+      ],
+      "rotatable": false
+    },
+    "tree_palm": {
+      "display": "Palm Tree",
+      "category": "nature",
+      "footprint": [
+        2,
+        2
+      ],
+      "blocking": true,
+      "biomes": [
+        "coast",
+        "jungle",
+        "desert"
+      ],
+      "variants": [
+        "props/tree_palm/tree_palm_01.png",
+        "props/tree_palm/tree_palm_02.png"
+      ],
+      "rotatable": false
+    },
+    "tree_dead": {
+      "display": "Dead Tree",
+      "category": "nature",
+      "footprint": [
+        2,
+        2
+      ],
+      "blocking": true,
+      "biomes": [
+        "swamp",
+        "volcanic",
+        "arctic",
+        "ruin"
+      ],
+      "variants": [
+        "props/tree_dead/tree_dead_01.png",
+        "props/tree_dead/tree_dead_02.png"
+      ],
+      "rotatable": false
+    },
+    "bush": {
+      "display": "Bush",
+      "category": "nature",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": false,
+      "biomes": [
+        "forest",
+        "grassland",
+        "jungle",
+        "village"
+      ],
+      "variants": [
+        "props/bush/bush_01.png",
+        "props/bush/bush_02.png",
+        "props/bush/bush_03.png"
+      ],
+      "rotatable": false
+    },
+    "stump": {
+      "display": "Tree Stump",
+      "category": "nature",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": true,
+      "biomes": [
+        "forest",
+        "grassland",
+        "swamp"
+      ],
+      "variants": [
+        "props/stump/stump_01.png",
+        "props/stump/stump_02.png"
+      ],
+      "rotatable": false
+    },
+    "stalagmite": {
+      "display": "Stalagmite",
+      "category": "nature",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": true,
+      "biomes": [
+        "cave",
+        "mine"
+      ],
+      "variants": [
+        "props/stalagmite/stalagmite_01.png",
+        "props/stalagmite/stalagmite_02.png"
+      ],
+      "rotatable": false
+    },
+    "lily_pad": {
+      "display": "Lily Pads",
+      "category": "nature",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": false,
+      "biomes": [
+        "swamp",
+        "grotto",
+        "coast"
+      ],
+      "variants": [
+        "props/lily_pad/lily_pad_01.png",
+        "props/lily_pad/lily_pad_02.png"
+      ],
+      "rotatable": false
+    },
+    "coral": {
+      "display": "Coral",
+      "category": "nature",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": false,
+      "biomes": [
+        "coast",
+        "grotto"
+      ],
+      "variants": [
+        "props/coral/coral_01.png",
+        "props/coral/coral_02.png"
+      ],
+      "rotatable": false
+    },
+    "mushroom": {
+      "display": "Mushrooms",
+      "category": "nature",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": false,
+      "biomes": [
+        "cave",
+        "swamp",
+        "forest",
+        "grotto"
+      ],
+      "variants": [
+        "props/mushroom/mushroom_01.png",
+        "props/mushroom/mushroom_02.png"
+      ],
+      "rotatable": false
+    },
+    "spike_trap": {
+      "display": "Spike Trap",
+      "category": "hazard",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": false,
+      "biomes": [
+        "dungeon",
+        "mine",
+        "ruin"
+      ],
+      "variants": [
+        "props/spike_trap/spike_trap_01.png",
+        "props/spike_trap/spike_trap_02.png"
+      ],
+      "rotatable": false
+    },
+    "bones": {
+      "display": "Bones",
+      "category": "hazard",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": false,
+      "biomes": [
+        "dungeon",
+        "cave",
+        "crypt",
+        "volcanic",
+        "ruin"
+      ],
+      "variants": [
+        "props/bones/bones_01.png",
+        "props/bones/bones_02.png"
+      ],
+      "rotatable": true
+    },
+    "altar": {
+      "display": "Altar",
+      "category": "focal",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": true,
+      "biomes": [
+        "temple",
+        "dungeon",
+        "crypt",
+        "ruin"
+      ],
+      "variants": [
+        "props/altar/altar_01.png",
+        "props/altar/altar_02.png"
+      ],
+      "rotatable": true
+    },
+    "well": {
+      "display": "Well",
+      "category": "focal",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": true,
+      "biomes": [
+        "village",
+        "dungeon",
+        "ruin"
+      ],
+      "variants": [
+        "props/well/well_01.png",
+        "props/well/well_02.png"
+      ],
+      "rotatable": false
+    },
+    "statue": {
+      "display": "Statue",
+      "category": "focal",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": true,
+      "biomes": [
+        "temple",
+        "dungeon",
+        "crypt",
+        "ruin",
+        "fortress"
+      ],
+      "variants": [
+        "props/statue/statue_01.png",
+        "props/statue/statue_02.png"
+      ],
+      "rotatable": false
+    },
+    "campfire": {
+      "display": "Campfire",
+      "category": "focal",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": true,
+      "biomes": [
+        "forest",
+        "camp",
+        "cave",
+        "grassland",
+        "arctic"
+      ],
+      "variants": [
+        "props/campfire/campfire_01.png",
+        "props/campfire/campfire_02.png"
+      ],
+      "rotatable": false
+    },
+    "fountain": {
+      "display": "Fountain",
+      "category": "focal",
+      "footprint": [
+        2,
+        2
+      ],
+      "blocking": true,
+      "biomes": [
+        "village",
+        "temple",
+        "fortress"
+      ],
+      "variants": [
+        "props/fountain/fountain_01.png"
+      ],
+      "rotatable": false
+    },
+    "brazier": {
+      "display": "Brazier",
+      "category": "focal",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": true,
+      "biomes": [
+        "temple",
+        "dungeon",
+        "crypt",
+        "fortress"
+      ],
+      "variants": [
+        "props/brazier/brazier_01.png",
+        "props/brazier/brazier_02.png"
+      ],
+      "rotatable": false
+    },
+    "chest": {
+      "display": "Chest",
+      "category": "focal",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": true,
+      "biomes": [
+        "dungeon",
+        "cave",
+        "crypt",
+        "ship",
+        "mine"
+      ],
+      "variants": [
+        "props/chest/chest_01.png",
+        "props/chest/chest_02.png"
+      ],
+      "rotatable": true
+    },
+    "shipwreck": {
+      "display": "Shipwreck",
+      "category": "focal",
+      "footprint": [
+        2,
+        2
+      ],
+      "blocking": true,
+      "biomes": [
+        "coast",
+        "ship",
+        "grotto"
+      ],
+      "variants": [
+        "props/shipwreck/shipwreck_01.png"
+      ],
+      "rotatable": true
+    },
+    "standing_stone": {
+      "display": "Standing Stone",
+      "category": "focal",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": true,
+      "biomes": [
+        "grassland",
+        "forest",
+        "ruin",
+        "arctic"
+      ],
+      "variants": [
+        "props/standing_stone/standing_stone_01.png",
+        "props/standing_stone/standing_stone_02.png"
+      ],
+      "rotatable": false
+    },
+    "throne": {
+      "display": "Throne",
+      "category": "focal",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": true,
+      "biomes": [
+        "fortress",
+        "dungeon",
+        "temple",
+        "ruin"
+      ],
+      "variants": [
+        "props/throne/throne_01.png",
+        "props/throne/throne_02.png"
+      ],
+      "rotatable": true
+    },
+    "door": {
+      "display": "Door",
+      "category": "structure",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": true,
+      "biomes": [
+        "dungeon",
+        "village",
+        "fortress",
+        "temple"
+      ],
+      "variants": [
+        "props/door/door_01.png",
+        "props/door/door_02.png"
+      ],
+      "rotatable": true
+    },
+    "double_door": {
+      "display": "Double Door",
+      "category": "structure",
+      "footprint": [
+        2,
+        1
+      ],
+      "blocking": true,
+      "biomes": [
+        "fortress",
+        "temple",
+        "dungeon"
+      ],
+      "variants": [
+        "props/double_door/double_door_01.png",
+        "props/double_door/double_door_02.png"
+      ],
+      "rotatable": true
+    },
+    "tent": {
+      "display": "Tent",
+      "category": "structure",
+      "footprint": [
+        2,
+        2
+      ],
+      "blocking": true,
+      "biomes": [
+        "camp",
+        "grassland",
+        "arctic",
+        "desert"
+      ],
+      "variants": [
+        "props/tent/tent_01.png",
+        "props/tent/tent_02.png"
+      ],
+      "rotatable": true
+    },
+    "cart": {
+      "display": "Cart",
+      "category": "structure",
+      "footprint": [
+        2,
+        1
+      ],
+      "blocking": true,
+      "biomes": [
+        "village",
+        "market",
+        "camp"
+      ],
+      "variants": [
+        "props/cart/cart_01.png",
+        "props/cart/cart_02.png"
+      ],
+      "rotatable": true
+    },
+    "boat": {
+      "display": "Rowboat",
+      "category": "structure",
+      "footprint": [
+        2,
+        1
+      ],
+      "blocking": true,
+      "biomes": [
+        "coast",
+        "ship",
+        "grotto"
+      ],
+      "variants": [
+        "props/boat/boat_01.png",
+        "props/boat/boat_02.png"
+      ],
+      "rotatable": true
+    },
+    "stairs_up": {
+      "display": "Stairs Up",
+      "category": "connection",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": false,
+      "biomes": [
+        "dungeon",
+        "tower",
+        "fortress",
+        "mine",
+        "ship"
+      ],
+      "variants": [
+        "props/stairs_up/stairs_up_01.png",
+        "props/stairs_up/stairs_up_02.png"
+      ],
+      "rotatable": true
+    },
+    "stairs_down": {
+      "display": "Stairs Down",
+      "category": "connection",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": false,
+      "biomes": [
+        "dungeon",
+        "tower",
+        "fortress",
+        "mine",
+        "ship"
+      ],
+      "variants": [
+        "props/stairs_down/stairs_down_01.png",
+        "props/stairs_down/stairs_down_02.png"
+      ],
+      "rotatable": true
+    },
+    "ladder": {
+      "display": "Ladder",
+      "category": "connection",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": false,
+      "biomes": [
+        "mine",
+        "cave",
+        "ship",
+        "dungeon",
+        "tower"
+      ],
+      "variants": [
+        "props/ladder/ladder_01.png",
+        "props/ladder/ladder_02.png"
+      ],
+      "rotatable": true
+    },
+    "trapdoor": {
+      "display": "Trapdoor",
+      "category": "connection",
+      "footprint": [
+        1,
+        1
+      ],
+      "blocking": false,
+      "biomes": [
+        "dungeon",
+        "tavern",
+        "ship",
+        "mine"
+      ],
+      "variants": [
+        "props/trapdoor/trapdoor_01.png",
+        "props/trapdoor/trapdoor_02.png"
+      ],
+      "rotatable": true
+    }
+  }
+}
