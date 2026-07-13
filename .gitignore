@@ -17,3 +17,6 @@ __pycache__/
 graphify-out/.graphify_*
 # graphify dated backup snapshots (git history covers this)
 graphify-out/20*/
+
+# agent worktrees + shared build venv
+.worktrees/
