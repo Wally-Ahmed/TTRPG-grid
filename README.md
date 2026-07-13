@@ -84,7 +84,7 @@ That single command is *everything*. On the **first** run it:
    it isn't),
 2. creates a private virtual environment in a `.venv/` folder,
 3. installs the dependencies (Flask, Pillow, NumPy) into it,
-4. then launches the app and opens it in your browser at **http://127.0.0.1:5000**.
+4. then launches the app and opens it in your browser at **http://127.0.0.1:8420**.
 
 On **every run after that** it skips the setup (in well under a second) and just launches. So
 `./start.sh` (or `start.bat`) is *also* your everyday "start the app" command — there's nothing
@@ -100,6 +100,10 @@ You can pass extra options straight through; they're forwarded to the app:
 > If `./start.sh` reports "permission denied," make it executable once with
 > `chmod +x start.sh`, then run it again. (It's already committed with the executable bit set,
 > so this is rarely needed.)
+
+> **Port already in use?** On macOS, the AirPlay Receiver occupies port 5000 (which is why the
+> app defaults to **8420**). If 8420 is also taken, the app automatically picks the next free
+> port and prints which one it chose — or you can pick your own with `./start.sh --port <n>`.
 
 To stop the app, return to the terminal window and press **Ctrl+C**.
 
@@ -125,7 +129,7 @@ pip install -r requirements.txt
 python run.py
 ```
 
-Then open **http://127.0.0.1:5000** in your browser if it didn't open on its own.
+Then open **http://127.0.0.1:8420** in your browser if it didn't open on its own.
 
 `run.py` also accepts `--port <n>`, `--host <addr>` (defaults to loopback-only `127.0.0.1`),
 `--no-browser`, and `--library-root <dir>`. A `PORT` environment variable works too.

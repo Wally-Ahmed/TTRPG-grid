@@ -14,7 +14,7 @@ REM  It is idempotent: the SAME command is both the first-run installer and the
 REM  everyday launcher.
 REM
 REM  Usage:
-REM    start.bat                 - set up (first run) then serve on 127.0.0.1:5000
+REM    start.bat                 - set up (first run) then serve on 127.0.0.1:8420
 REM    start.bat --port 8080     - pass through to run.py (custom port)
 REM    start.bat --no-browser    - don't auto-open a browser tab
 REM ============================================================================

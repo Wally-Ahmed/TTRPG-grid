@@ -15,7 +15,7 @@
 # because setup is skipped.
 #
 # Usage:
-#   ./start.sh                       # set up (first run) then serve on http://127.0.0.1:5000
+#   ./start.sh                       # set up (first run) then serve on http://127.0.0.1:8420
 #   ./start.sh --port 8080           # pass through to run.py (custom port)
 #   ./start.sh --no-browser          # don't auto-open a browser tab
 #   PORT=8080 ./start.sh             # env-var port also works (read by run.py)
