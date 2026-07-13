@@ -15,3 +15,5 @@ __pycache__/
 
 # graphify machine-specific state (graph outputs stay tracked)
 graphify-out/.graphify_*
+# graphify dated backup snapshots (git history covers this)
+graphify-out/20*/
