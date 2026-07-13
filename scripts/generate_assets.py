@@ -395,10 +395,10 @@ def paint_tall_grass(v):
 
 def paint_forest_floor(v):
     dh, ds, dv = _jit(v, "forest_floor")
-    dark = shift_hsv(hex_rgb("#33281a"), dh, ds, dv)
-    mid = shift_hsv(hex_rgb("#4d3b23"), dh, ds, dv)
-    moss = shift_hsv(hex_rgb("#4f6234"), dh, ds, dv)
-    leaf = shift_hsv(hex_rgb("#6b4f2a"), dh, ds, dv)
+    dark = shift_hsv(hex_rgb("#463824"), dh, ds, dv)
+    mid = shift_hsv(hex_rgb("#63492a"), dh, ds, dv)
+    moss = shift_hsv(hex_rgb("#647c44"), dh, ds, dv)
+    leaf = shift_hsv(hex_rgb("#8a6838"), dh, ds, dv)
     arr, field, _ = _base_from_gradient("forest_floor", v, 5, 5,
                                         [(0.0, dark), (0.4, mid), (0.75, leaf), (1.0, moss)])
     rng = rng_for("ff_brush", v)
@@ -416,10 +416,10 @@ def paint_forest_floor(v):
 
 def paint_jungle_floor(v):
     dh, ds, dv = _jit(v, "jungle_floor")
-    dark = shift_hsv(hex_rgb("#24371a"), dh, ds, dv)
-    mid = shift_hsv(hex_rgb("#375223"), dh, ds, dv)
-    moss = shift_hsv(hex_rgb("#4e7a2f"), dh, ds, dv)
-    mud = shift_hsv(hex_rgb("#453a20"), dh, ds, dv)
+    dark = shift_hsv(hex_rgb("#3a5228"), dh, ds, dv)
+    mid = shift_hsv(hex_rgb("#527636"), dh, ds, dv)
+    moss = shift_hsv(hex_rgb("#6fa048"), dh, ds, dv)
+    mud = shift_hsv(hex_rgb("#6b5a30"), dh, ds, dv)
     arr, field, _ = _base_from_gradient("jungle_floor", v, 4, 5,
                                         [(0.0, dark), (0.35, mud), (0.7, mid), (1.0, moss)])
     rng = rng_for("jf_brush", v)
@@ -436,9 +436,9 @@ def paint_jungle_floor(v):
 
 def paint_dirt(v):
     dh, ds, dv = _jit(v, "dirt")
-    dark = shift_hsv(hex_rgb("#4a3521"), dh, ds, dv)
-    mid = shift_hsv(hex_rgb("#6b4d30"), dh, ds, dv)
-    light = shift_hsv(hex_rgb("#8a6842"), dh, ds, dv)
+    dark = shift_hsv(hex_rgb("#5c422a"), dh, ds, dv)
+    mid = shift_hsv(hex_rgb("#805c3a"), dh, ds, dv)
+    light = shift_hsv(hex_rgb("#a37e50"), dh, ds, dv)
     arr, field, _ = _base_from_gradient("dirt", v, 5, 5,
                                         [(0.0, dark), (0.5, mid), (1.0, light)])
     rng = rng_for("dirt_brush", v)
@@ -589,9 +589,9 @@ def paint_swamp(v):
 
 def paint_mud(v):
     dh, ds, dv = _jit(v, "mud")
-    dark = shift_hsv(hex_rgb("#33281a"), dh, ds, dv)
-    mid = shift_hsv(hex_rgb("#4c3c25"), dh, ds, dv)
-    wet = shift_hsv(hex_rgb("#5f4c30"), dh, ds, dv)
+    dark = shift_hsv(hex_rgb("#4c3c26"), dh, ds, dv)
+    mid = shift_hsv(hex_rgb("#6b5433"), dh, ds, dv)
+    wet = shift_hsv(hex_rgb("#8a6d44"), dh, ds, dv)
     arr, field, _ = _base_from_gradient("mud", v, 4, 5,
                                         [(0.0, dark), (0.5, mid), (1.0, wet)])
     rng = rng_for("mud_brush", v)
@@ -683,9 +683,9 @@ def paint_lava(v):
 
 def paint_volcanic_rock(v):
     dh, ds, dv = _jit(v, "volcanic_rock")
-    black = shift_hsv(hex_rgb("#26201f"), dh, ds, dv)
-    grey = shift_hsv(hex_rgb("#3d3634"), dh, ds, dv)
-    ash = shift_hsv(hex_rgb("#544c48"), dh, ds, dv)
+    black = shift_hsv(hex_rgb("#38302e"), dh, ds, dv)
+    grey = shift_hsv(hex_rgb("#544b48"), dh, ds, dv)
+    ash = shift_hsv(hex_rgb("#736860"), dh, ds, dv)
     ember = hex_rgb("#7a2a10")
     arr, field, _ = _base_from_gradient("volcanic_rock", v, 5, 5,
                                         [(0.0, black), (0.5, grey), (1.0, ash)])
@@ -739,9 +739,9 @@ def paint_stone_floor(v):
 
 def paint_wood_floor(v):
     dh, ds, dv = _jit(v, "wood_floor")
-    dark = shift_hsv(hex_rgb("#5a3d22"), dh, ds, dv)
-    mid = shift_hsv(hex_rgb("#7a552f"), dh, ds, dv)
-    light = shift_hsv(hex_rgb("#9c7444"), dh, ds, dv)
+    dark = shift_hsv(hex_rgb("#6b4b2b"), dh, ds, dv)
+    mid = shift_hsv(hex_rgb("#8c6339"), dh, ds, dv)
+    light = shift_hsv(hex_rgb("#b0844f"), dh, ds, dv)
     rng = pyrng_for("wfloor", v)
     arr = np.zeros((TILE, TILE, 3), dtype=np.float64)
     # planks running horizontally; 4 planks per tile (35px), wrap seamlessly
@@ -835,26 +835,29 @@ def paint_ship_deck(v):
 # ---- Caves / rock -------------------------------------------------------------------
 
 def paint_cave_floor(v):
+    # readable earthy brown/tan cave dirt (published battle-map look), not a near-black
+    # neutral: warm hue, lifted values so floor is clearly lighter than cave_wall and
+    # survives the assembly-time mood grade + vignette with headroom.
     dh, ds, dv = _jit(v, "cave_floor")
-    dark = shift_hsv(hex_rgb("#2c2926"), dh, ds, dv)
-    mid = shift_hsv(hex_rgb("#443f39"), dh, ds, dv)
-    light = shift_hsv(hex_rgb("#5e574d"), dh, ds, dv)
+    dark = shift_hsv(hex_rgb("#6b5942"), dh, ds, dv)
+    mid = shift_hsv(hex_rgb("#8a7458"), dh, ds, dv)
+    light = shift_hsv(hex_rgb("#a68d6c"), dh, ds, dv)
     arr, field, _ = _base_from_gradient("cave_floor", v, 5, 5,
                                         [(0.0, dark), (0.5, mid), (1.0, light)])
     rng = rng_for("cavef_brush", v)
     # scattered rocks and grit
     stamp_blobs(arr, rng, 300, lambda r: lerp_rgb(dark, light, r.random()), 2, 6, 0.10, 0.24)
-    stamp_blobs(arr, rng, 200, lambda r: dark, 1, 3, 0.1, 0.24)
-    # damp dark patches
-    stamp_blobs(arr, rng, 40, lambda r: shift_hsv(dark, 0, 0.05, -0.05), 5, 11, 0.08, 0.18)
-    return _finish("cave_floor", v, arr, edge=0.18, grain=6)
+    stamp_blobs(arr, rng, 200, lambda r: shift_hsv(dark, 0, 0.02, -0.10), 1, 3, 0.1, 0.24)
+    # damp dark patches (kept subtle so the floor stays readable)
+    stamp_blobs(arr, rng, 40, lambda r: shift_hsv(dark, 0, 0.05, -0.08), 5, 11, 0.08, 0.16)
+    return _finish("cave_floor", v, arr, edge=0.12, grain=6)
 
 
 def paint_mountain_rock(v):
     dh, ds, dv = _jit(v, "mountain_rock")
-    dark = shift_hsv(hex_rgb("#4a463f"), dh, ds, dv)
-    mid = shift_hsv(hex_rgb("#6d675c"), dh, ds, dv)
-    light = shift_hsv(hex_rgb("#928b7c"), dh, ds, dv)
+    dark = shift_hsv(hex_rgb("#57524a"), dh, ds, dv)
+    mid = shift_hsv(hex_rgb("#7d7669"), dh, ds, dv)
+    light = shift_hsv(hex_rgb("#a49b8a"), dh, ds, dv)
     arr, field, _ = _base_from_gradient("mountain_rock", v, 4, 5,
                                         [(0.0, dark), (0.5, mid), (1.0, light)])
     rng = rng_for("mrock_brush", v)
@@ -990,13 +993,17 @@ def _wall_block_pattern(v, terrain, mortar_hex, lo_hex, hi_hex, brick=False):
 
 
 def paint_stone_wall(v):
-    arr, *_ = _wall_block_pattern(v, "stone_wall", "#1f1d1a", "#605a51", "#867f72", brick=False)
-    return _finish("stone_wall", v, arr, edge=0.20, grain=5)
+    # blocking wall: must read clearly DARKER than stone_floor (its indoor companion)
+    # while keeping legible block edges + bevel. Darker ashlar tones than the floor.
+    arr, *_ = _wall_block_pattern(v, "stone_wall", "#191714", "#443f39", "#5c554b", brick=False)
+    return _finish("stone_wall", v, arr, edge=0.16, grain=5)
 
 
 def paint_brick_wall(v):
-    arr, *_ = _wall_block_pattern(v, "brick_wall", "#2a211c", "#8a4a34", "#b06a4a", brick=True)
-    return _finish("brick_wall", v, arr, edge=0.18, grain=5)
+    # keep the warm brick hue signal but sit in the dark wall band (clearly darker than
+    # any companion floor), with block edges and bevel still readable.
+    arr, *_ = _wall_block_pattern(v, "brick_wall", "#231a15", "#6f3a28", "#8a4f38", brick=True)
+    return _finish("brick_wall", v, arr, edge=0.16, grain=5)
 
 
 def paint_wood_wall(v):
@@ -1028,24 +1035,30 @@ def paint_wood_wall(v):
 
 
 def paint_cave_wall(v):
-    # top-down rock mass: rough dark stone, no regular blocks
+    # top-down rock mass: rough stone, no regular blocks. Clearly darker than cave_floor
+    # but NOT a uniform black slab: lifted mid-tone with bright rock-relief highlights on
+    # the boulders/crack edges so the relief reads at a glance.
     dh, ds, dv = _jit(v, "cave_wall")
-    dark = shift_hsv(hex_rgb("#211d1a"), dh, ds, dv)
-    mid = shift_hsv(hex_rgb("#3a332d"), dh, ds, dv)
-    light = shift_hsv(hex_rgb("#544b41"), dh, ds, dv)
+    dark = shift_hsv(hex_rgb("#332d27"), dh, ds, dv)
+    mid = shift_hsv(hex_rgb("#4c4339"), dh, ds, dv)
+    light = shift_hsv(hex_rgb("#6d6150"), dh, ds, dv)
+    hilite = shift_hsv(hex_rgb("#948468"), dh, ds, dv)   # bright top-lit rock relief
     arr, field, _ = _base_from_gradient("cave_wall", v, 4, 5,
                                         [(0.0, dark), (0.5, mid), (1.0, light)])
     rng = rng_for("cwall_brush", v)
-    # lumpy protrusions (top-lit) and deep crevices
-    stamp_blobs(arr, rng, 160, lambda r: lerp_rgb(mid, light, r.random()), 4, 11, 0.12, 0.28)
-    stamp_blobs(arr, rng, 200, lambda r: dark, 2, 6, 0.14, 0.34)
-    # crevice ridges
+    # lumpy protrusions (bright top-lit relief) and deep crevices. Highlights stay bright
+    # (readable relief) but sparse so the wall's MEAN stays in the dark wall band.
+    stamp_blobs(arr, rng, 150, lambda r: lerp_rgb(light, hilite, r.random()), 4, 11, 0.14, 0.32)
+    stamp_blobs(arr, rng, 200, lambda r: dark, 2, 6, 0.14, 0.32)
+    # crevice ridges: darkened trough flanked by a bright rock-relief glint so cracks read
     for a in (25, 115):
         cr = tileable_directional(TILE, rng_for("cwall_c", v, a).integers(3, 6),
                                   rng_for("cwall_cn", v, a), angle=a, warp=26)
         ridge = np.clip((np.abs(cr - 0.5) - 0.4) * 22, 0, 1)
-        arr -= ridge[..., None] * 46
-    return _finish("cave_wall", v, arr, edge=0.22, grain=6)
+        arr -= ridge[..., None] * 30
+        glint = np.clip((np.abs(cr - 0.5) - 0.34) * 22, 0, 1) - ridge
+        arr += np.clip(glint, 0, 1)[..., None] * (np.array(hilite) - np.array(mid)) * 0.6
+    return _finish("cave_wall", v, arr, edge=0.14, grain=6)
 
 
 # --------------------------------------------------------------------------------------
